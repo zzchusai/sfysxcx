@@ -1,0 +1,4 @@
+<template name='noCollect'>
+<image mode='aspectFill' src='{{src}}'></image>
+<text wx:if='{{tip&&tip.length>0}}'>{{tip}}</text>
+</template>

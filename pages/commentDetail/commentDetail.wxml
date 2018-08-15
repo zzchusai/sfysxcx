@@ -1,0 +1,26 @@
+<import src='../template/noComments/noComments.wxml'/>
+  <import src='../template/netError/netError.wxml'/>
+<view class='commentDetail-root' wx:if='{{noError}}'>
+<view class='commentDetail-themeList'>
+  <commentCell id="commentCell" wx:for="{{themeList}}" wx:key="{{item.user_id}}" item="{{item}}" isLast="{{index == themeList.length-1}}" bind:selectCell="_selectAllCell" bind:setCommentLike='_setCommentLike' types='{{type}}' showReply='0' bind:delComment='_delComment'></commentCell>
+   </view>
+  <view class='commentDetail-list'>
+    <view class='answerDetail-list-header'>
+        全部评论 ({{commentsNum}})
+    </view>
+    <view class='commentDetail-list-content' >
+    <view wx:if='{{isComments}}'>
+    <commentCell id="commentCell" wx:for="{{allList}}" wx:key="{{item.user_id}}" item="{{item}}" index="{{index}}" isLast="{{index == allList.length-1}}" bind:selectCell="_selectAllCell"  types='{{type}}' showReply='1' bind:setCommentLike='_setCommentLikes' wx:if='{{isComments}}' bind:delComment='_delComments' ></commentCell>
+    </view>
+  </view>
+  </view>
+</view>
+
+<view class='contentError' wx:if="{{!noError}}">
+  <template is='noComments' data="{{tip:errorTip,src:'../../utils/res/imgs/clearContent.png'}}"></template>
+</view>
+
+ <inputArea id="inputArea"  editPlaceholder="{{editPlaceholder}}" bind:reply="_reply" types='4' isFocus='{{isfocus}}' showRightView="{{false}}" wx:if='{{noError}}'></inputArea>
+<view class='netError' catchtap='reloadNet' wx:if="{{!netWork}}">
+  <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+</view>

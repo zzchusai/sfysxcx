@@ -1,0 +1,16 @@
+<!-- 轮播图 -->
+<swiper 
+  class='home-banner-swiper' 
+  indicator-dots="{{mutableData.length>1}}" 
+  autoplay="true" 
+  circular="true"
+  indicator-color="#000"
+  indicator-active-color="#fff"
+  >
+ <block wx:for="{{mutableData}}" wx:key="{{item.multi_id}}">
+    <swiper-item>
+      <image src="{{item.banner_pic}}" mode="scaleToFill" data-index='{{index}}' catchtap='selectCell' />
+    </swiper-item>
+  </block>
+</swiper>
+<image src='../../../utils/res/imgs/ic_placeholder_750x460.png' class='noData' wx:if="{{mutableData.length<1}}"></image> 

@@ -1,0 +1,113 @@
+.bindTel{
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 60rpx;
+}
+.remark{
+  font-size: 30rpx;
+  color: #333;
+  margin: 90rpx 0rpx 50rpx -30rpx;
+}
+.placeholder{
+  font-size: 30rpx;
+  color: #CCCCCC;
+}
+
+.line{
+  border-bottom: 1rpx #DAD9D9 solid;
+}
+input{
+  height: 99rpx;
+  font-size: 30rpx;
+  color: #323333;
+}
+
+.bindTel-code{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bindTel-code icon{
+  margin-right: 30rpx;
+}
+
+.bindTel-code text{
+  font-size: 30rpx;
+  color: #BD9973;
+  border: 2rpx #BD9973 solid;
+  white-space:nowrap;
+  display: inline-block;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+}
+.bindTel-submit{
+  width: 100%;
+  height: 88rpx;
+  font-size: 30rpx;
+  background-color: #BD9973;
+  color: #FFFFFF;
+  line-height: 88rpx;
+  text-align: center;
+  margin-top: 80rpx;
+  border-radius: 10rpx;
+}
+
+.bindTel-error{
+  background-color: #F6F6F6;
+  color: #CCCCCC;  
+}
+
+.other-login{
+  margin-top: 90rpx;
+  font-size: 30rpx;
+  color: #333;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  
+}
+.other-login-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50rpx;
+}
+
+.other-login-title .line{
+  flex: 1;
+  height: 0.5rpx;
+  background-color: #333;
+}
+.other-login-title .line:first-child{
+  margin-right: 30rpx;
+}
+.other-login-title .line:last-child{
+  margin-left: 30rpx;
+}
+
+.login_wechat{
+  color: #333;
+  background-color: white;
+  font-size: 30rpx;
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx
+}
+.login_wechat::after{
+  border-radius: 90rpx; 
+  border-color: #CCCCCC;
+}
+.bindTel-code .cantCode{
+  color: #ccc;
+  border: 2rpx #CCCCCC solid;
+}
+.input-tel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

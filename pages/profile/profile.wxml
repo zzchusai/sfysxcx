@@ -1,0 +1,29 @@
+<!-- 未登录 -->
+<view class='profile_root' wx:if="{{isLogin}}">
+  <view class='profile_header'>
+    <image src="{{isLogin?(userInfo.avatar?userInfo.avatar:'../../utils/res/imgs/ic_avatar_default.png'):'../../utils/res/imgs/ic_avatar_default.png'}}"></image>
+    <view>
+      <text>{{isLogin?userInfo.nickname:'请登录'}}</text>
+      <view wx:if="{{!phone || phone.length<=0}}" catchtap='bindTel'>绑定手机号</view>
+    </view>
+  </view>
+  <view class='profile_cell'  catchtap="collectToLogin" >
+    <image src='../../utils/res/imgs/myCollection.png' mode="aspectFit" ></image>
+    <text>我的收藏</text>
+  </view>
+  <view class='profile_line'></view>
+   <view class='profile_cell'  catchtap="questionToLogin"
+>
+    <image src='../../utils/res/imgs/myQuestion.png' mode="aspectFit"></image>
+    <text>我的提问</text>
+  </view>
+</view>
+
+<!-- 未登录时 -->
+<view wx:if="{{!isLogin}}" class='profile_root_unLogin'>
+  <image class='app-icon' src='../../utils/res/imgs/ic_placeholder_big.png'></image>
+  <button open-type='getUserInfo' class='login_wechat' bindgetuserinfo="toLogin">微信登录</button>
+  <button class='login_phone' catchtap='loginTel'>手机号登录</button>
+</view>
+
+

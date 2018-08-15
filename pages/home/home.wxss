@@ -1,0 +1,85 @@
+
+@import "../template/netError/netError.wxss";
+
+.home-table-header{
+  width: 100%;
+  height: 100rpx;
+  padding: 0 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx #F1F1F1 solid;
+
+}
+
+.home-table-header view{
+  color: #333;
+  font-size: 32rpx;
+  padding-left: 19rpx;
+  border-left: #333  solid 4rpx;
+  font-weight: bold;
+}
+
+.home-table-header image{
+  width: 55rpx;
+  height: 40rpx; 
+}
+.home-cell{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 40rpx 0rpx;
+  margin: 0rpx 30rpx;
+  padding-bottom: 0rpx;
+  border-bottom: 1rpx #E8E8E8 solid;
+}
+
+.home-cell:last-child{
+  border-bottom:none;
+}
+
+.home-cell .home-cell-left{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.home-cell .home-cell-title{
+  color: #4C4949;
+  font-size: 30rpx;
+  flex: 1;
+  margin-right: 30rpx;
+  flex-wrap: wrap;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+  margin-bottom: 65rpx;
+}
+
+.home-cell .isRead{
+  color: #999 !important;
+}
+
+.home-cell .home-cell-tag{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #999;
+  font-size: 26rpx;
+  margin-bottom: 40rpx;
+}
+
+.home-cell>image{
+  width: 235rpx;
+  height: 184rpx;
+  margin-left: 33rpx;
+  margin-bottom: 40rpx;
+}
+.netError{
+  z-index: 2000;
+  top: 0rpx;
+  background-color: white;
+}

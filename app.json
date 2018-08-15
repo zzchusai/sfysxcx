@@ -1,0 +1,54 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/answer/answer",
+    "pages/phoneLogin/phoneLogin",
+    "pages/bindtel/bindTel",
+    "pages/search/search",
+    "pages/writeAnswer/writeAnswer",
+    "pages/profile/profile",
+    "pages/answerDetail/answerDetail",
+    
+    "pages/articleDetail/articleDetail",
+    "pages/activityDetail/activityDetail",
+    "pages/commentDetail/commentDetail",
+    "pages/myCollection/myCollection",
+    "pages/myQuestion/myQuestion"
+  ],
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "./utils/res/imgs/ic_main_home_n.png",
+        "selectedIconPath": "./utils/res/imgs/ic_main_home_h.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/answer/answer",
+        "iconPath": "./utils/res/imgs/ic_main_question_n.png",
+        "selectedIconPath": "./utils/res/imgs/ic_main_question_h.png",
+        "text": "问答"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "iconPath": "./utils/res/imgs/ic_main_profile_n.png",
+        "selectedIconPath": "./utils/res/imgs/ic_main_profile_h.png",
+        "text": "我的"
+      }
+    ],
+    "color": "#4C4949",
+    "selectedColor": "#C59F77",
+    "backgroundColor": "#FFf"
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "十方云水",
+    "navigationBarTextStyle": "black",
+    "disableScroll": false
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "debug": true
+}

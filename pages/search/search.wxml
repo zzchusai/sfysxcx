@@ -1,0 +1,41 @@
+<import src='../template/netError/netError.wxml'/>
+<import src='../template/noData/noData.wxml' />
+<!-- 搜索 -->
+<view class='info'>
+<view class='searchArt'>
+<image src='../../utils/res/imgs/search_icon.png' class='search'></image>
+<input placeholder="搜索您感兴趣的文章" confirm-type="search" bindconfirm="toSearch" value="{{keywords}}" bindinput="inputWords" class='search_input'></input>
+<icon type="clear" size="18" wx:if="{{keywords.length>0}}" catchtap="delSearch" class="searchclose"></icon>
+</view>
+</view>
+<!-- 内容 -->
+<view class='art-content' >
+<view class='hotArtTitles' wx:if='{{netWork&&!showart}}'>
+热门文章
+</view>
+
+<view class='hotArt-content' wx:if='{{netWork}}'>
+<view class='home-cell' wx:for="{{hotartData}}" data-index="{{index}}" wx:key="{{item.id}}" catchtap='selectCell'>
+    <view class='home-cell-left' data-index="{{index}}">
+      <view class="{{['home-cell-title',item.isRead?'isRead':'']}}" data-index="{{index}}">
+        {{item.title}}
+      </view>
+      <view class='home-cell-tag' data-index="{{index}}">
+        <view class='home-cell-author' data-index="{{index}}">{{item.author}}</view>
+        <view class='home-cell-num' data-index="{{index}}">
+        {{item.views}} 阅读 | {{item.comment_nums}} 评论
+        </view>
+      </view>
+    </view>
+    <image src='{{item.pic}}' mode='aspectFill' wx:if="{{item.pic&&item.pic.length>0}}" data-index="{{index}}">
+    </image>
+  </view>
+</view>
+<view class='allNodata' wx:if='{{!isData&&netWork}}'>
+<template is='noData' data="{{src:'../../utils/res/imgs/nodata.png',tip:'搜索无结果'}}"></template>
+</view>
+</view>
+
+  <view class='netError' catchtap='reloadNet' wx:if="{{ !netWork}}">
+    <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+  </view>

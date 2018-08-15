@@ -1,0 +1,22 @@
+<view class="{{[isFocus?'comment-input-focus':'comment-input-noFocus']}}" catchtap='select'>
+  <view class='input-text'>
+    <input placeholder="{{isFocus?editPlaceholder:noEditPlaceholder}}" placeholder-class="placeholder"   cursor="0"    maxlength="-1"  value='{{comments}}' confirm-type="send" bindinput="editIng"  focus="{{isFocus}}" bindfocus="toEdit" bindblur="endEdit"  cursor-spacing="2" bindconfirm="submit">
+    </input>
+  </view>
+  <view wx:if="{{showRightView && !isFocus}}">
+    <view class='comments-setting'>
+      <view class='comments-nums'>
+        <image src='../../../utils/res/imgs/ic_reply3.png' wx:if='{{types!=4}}'></image>
+        <view class='setting-commentsNums' wx:if='{{commentsNums!=0}}'>{{commentsNums}}</view>
+      </view>
+      <view wx:if='{{types==1||types==2}}'>
+        <image src='../../../utils/res/imgs/ic_like_off.png' catchtap='setLike' wx:if='{{islike==0}}'></image>
+        <image src='../../../utils/res/imgs/ic_like_on.png' wx:if='{{islike==1}}' catchtap='setedLike'></image>
+      </view>
+       <view wx:if='{{types==0||types==2}}'>
+      <image wx:if='{{collect==0}}' src='../../../utils/res/imgs/ic_fav_off.png' catchtap='setCollect'></image>
+      <image wx:if='{{collect==1}}' src='../../../utils/res/imgs/ic_favorite_on.png' catchtap='cancelCollect'></image>
+      </view>
+    </view>
+  </view>
+</view>

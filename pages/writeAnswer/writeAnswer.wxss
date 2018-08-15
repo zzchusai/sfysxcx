@@ -1,0 +1,154 @@
+@import "../template/netError/netError.wxss";
+page{
+  background-color: #FAF9F9;
+}
+.writeAnswer-root{
+  display: flex;
+  flex-direction: column;
+  width: 100%; 
+}
+
+.writeAnswer-title{
+  height: 87rpx;
+  color: #333333;
+  font-size: 30rpx;
+  padding: 0rpx 50rpx;
+  border-bottom: 20rpx #FAF9F9 solid;
+  width: 100%;
+  background-color: white;
+}
+
+.placeholder{
+   color: #CCCCCC;
+  font-size: 30rpx;
+}
+
+.writeAnswer-issue{
+  padding: 30rpx 50rpx 30rpx 50rpx;
+  color: #333333;
+  font-size: 30rpx;
+  height: 312rpx;
+  width: 100%;
+  background-color: white;
+}
+
+ .writeAnswer-imgs{
+   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+} 
+.writeAnswer-imgs image{
+  width:30vw;
+  height:30vw;
+  margin-left: 2.5vw;
+  margin-bottom: 2.5vw;
+}
+
+.writeAnswer-img{
+  position: relative;
+}
+
+.writeAnswer-imgs .del-img{
+  width: 35rpx;
+  height: 35rpx;
+  border-radius: 14.5rpx;
+  position: absolute;
+  top: 10rpx;
+  right: 10rpx;
+  z-index: 200;
+}
+
+
+.writeAnswer-addImg{
+  width:30vw;
+  height:30vw;
+  margin-left: 2.5vw;
+  margin-bottom: 2.5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50rpx;
+}
+
+.writeAnswer-noImg{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: #CCCCCC;
+  font-size: 24rpx;
+  padding-left: 50rpx;
+}
+.writeAnswer-noImg image{
+  width: 60rpx;
+  height: 57rpx;
+}
+.writeAnswer-showImgs{
+  border-bottom: #FAF9F9 20rpx solid;
+  background-color: white;
+}
+.writeAnswer-issue-count{
+  height: 55rpx;
+  line-height: 55rpx;
+  font-size: 24rpx;
+  color: #ccc;
+  text-align: right;
+  padding-right: 30rpx;
+}
+.writeAnswer-selectClassify{
+  height: 89rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: #333333;
+  font-size: 30rpx;
+  padding: 0rpx 30rpx;
+  background-color: white;
+}
+
+.writeAnswer-selectClassify image{
+  width: 14rpx;
+  height: 25rpx;
+  margin-left: 30rpx;
+}
+.writeAnswer-selectClassify>view{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.writeAnswer-selectClassify .switch{
+  width: 88rpx;
+  height: 60rpx;
+}
+.writeAnswer-submit{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90rpx;
+  font-size: 30rpx;
+  color: #CCCCCC;
+  margin: 30rpx;
+}
+.writeAnswer-submit text{
+  display: inline-block;
+  background-color: white;
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 300rpx; 
+  text-align: center;
+  border-radius: 20rpx;
+}
+
+.writeAnswer-submit .allowText{
+  color: #C19C75;
+}
+.netError{
+  background-color: white;
+  z-index: 1000;
+}
+
+.wx-switch-input{width:88rpx !important;height:60rpx !important;} 
+.wx-switch-input::before{width:88rpx !important;height: 60rpx !important;}  
+.wx-switch-input::after{width: 60rpx !important;height: 60rpx !important;} 

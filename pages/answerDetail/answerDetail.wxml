@@ -1,0 +1,49 @@
+<import src='../template/netError/netError.wxml' />
+<import src='../template/noComments/noComments.wxml' />
+<scroll-view scroll-y class='answerDetail-root' wx:if="{{themeDetail != null}}">
+  <!-- 主题详情 -->
+  <view class='answerDetail-theme'>
+    <view class='answerDetail-theme-user'>
+      <image mode='aspectFill' src="{{themeDetail.anonymous==2?'../../utils/res/imgs/ic_avatar_anonymous.png':(themeDetail.avatar?themeDetail.avatar:'../../utils/res/imgs/ic_avatar_default.png')}}"></image>
+      <text>{{themeDetail.nickname||"匿名用户"}}</text>
+      <image mode='aspectFill' src='' wx:if="{{themeDetail.user_type == 2}}"></image>
+    </view>
+    <text class='answerDetail-theme-title'>{{themeDetail.title}}</text>
+    <view class='answerDetail-theme-content'>{{themeDetail.content}}</view>
+    <view class='answerDetail-theme-pic' wx:if="{{themeDetail.pic.length>0}}">
+      <image mode='aspectFill' wx:for="{{picImages}}" src='{{item.currPic}}' wx:key='{{picImages.index}}' data-src='{{item.currPic}}' catchtap='imgYu'></image>
+    </view>
+    <view class='answerDetail-theme-attach'>
+      <view>
+        <text>{{themeDetail.time}}</text>
+        <text wx:if="{{themeDetail.canDel == 1}}" class='themeDetail-del' catchtap='toDel'>删除</text>
+      </view>
+      <text>{{themeDetail.views}}阅读</text>
+    </view>
+  </view>
+  <!-- 精选评论 -->
+  <view class='answerDetail-select' wx:if="{{selectList.length>0}}" style="margin-bottom:{{allList.length>0?'':'84rpx'}}">
+    <view class='answerDetail-list-header'>
+      精选回答 ({{selectList.length}})
+    </view>
+    <commentCell id="commentCell" wx:for="{{selectList}}" wx:key="{{item.user_id}}" item="{{item}}" isLast="{{index == selectList.length-1}}" bind:selectCell="_selectPickCell" types='5' bind:setCommentLike='_setCommentLikes' showReply='1' bind:delComment='_delComment'></commentCell>
+  </view>
+  <!-- 全部评论 -->
+  <view class='answerDetail-all' wx:if="{{!(selectList.length>0 && allList.length==0)}}">
+    <view class='answerDetail-list-header'>
+      全部回答 ({{commentsNum}})
+    </view>
+    <view wx:if="{{isComments}}">
+      <commentCell id="commentCell" wx:for="{{allList}}" wx:key="{{item.user_id}}" item="{{item}}" isLast="{{index == allList.length-1}}" bind:selectCell="_selectAllCell" bind:setCommentLike='_setCommentLike' types='5' showReply='1' bind:delComment='_delComment'></commentCell>
+    </view>
+    <!-- 没有评论 -->
+    <view class='comments' wx:if='{{!isComments}}'>
+      <template is='noComments' data="{{tip:'还没有人回答哦，快来回答吧~',src:'../../utils/res/imgs/ic_no_comment.png'}}"></template>
+    </view>
+  </view>
+</scroll-view>
+
+<inputArea id="inputArea" bind:comments="_comments" commentsNums="{{commentsNum+selectList.length}}" types='0' multi_id='{{id}}' collect='{{state}}' islike='{{isLike}}' bind:setLike='_setLike' bind:setCollect='_setCollect' bind:cancelCollect='_cancelCollect'></inputArea>
+<view class='netError' catchtap='reloadNet' wx:if="{{!netWork}}">
+  <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+</view>

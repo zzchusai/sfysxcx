@@ -1,0 +1,39 @@
+<import src='../template/noData/noData.wxml' />
+<import src='../template/netError/netError.wxml' />
+<!-- 展示banner  -->
+<view class='answer-banner' wx:if="{{bannerData.length>0}}">
+  <answerBanner id="answerBanner" mutableData="{{bannerData}}" bind:selectbanner="_selectbanner">
+  </answerBanner>
+</view>
+
+<!-- 列表数据 -->
+<scroll-view class='answer-table' scroll-y>
+  <view class='answer-cell' wx:for="{{mutableData}}" wx:key="{{item.interlocut_id}}" catchtap='toAnswerDetail' data-index='{{item.interlocut_id}}'>
+    <view class='answer-cell-author'>
+      <image src="{{item.avatar||(item.anonymous==2?'../../utils/res/imgs/ic_avatar_anonymous.png':'../../utils/res/imgs/ic_avatar_default.png')}}" mode='aspectFill'>
+      </image>
+      <text>{{item.nickname}}</text>
+    </view>
+    <view class='answer-cell-title'>
+      {{item.title}}
+    </view>
+    <view class='answer-cell-content'>
+      {{item.content}}
+    </view>
+    <view class='answer-cell-read'>
+      <text>{{item.views}}阅读</text>
+      <text>{{item.answer_nums}}回答</text>
+    </view>
+  </view>
+</scroll-view>
+
+<button class='eidtAnswer' catchtap='toEdit'>
+  <image src='../../utils/res/imgs/ic_write_question.png'></image>
+</button>
+
+<view wx:if='{{mutableData.length<=0 && netWork}}' class='allNodata'>
+  <template is="noData" data="{{tip:'此栏目暂无内容',src:'../../utils/res/imgs/ic_no_question.png'}}"></template>
+</view>
+<view class='netError' catchtap='reloadNet' wx:if="{{mutableData.length<=0 && !netWork}}">
+  <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+</view>

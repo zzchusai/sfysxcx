@@ -1,0 +1,66 @@
+<import src='../template/netError/netError.wxml' />
+<import src='../template/noCollect/noCollect.wxml'/>
+<!-- 用户授权 -->
+<view class='profile-root'>
+  <!-- 我的收藏 -->
+  <view class='tabs'>
+      <block wx:for='{{["文章","问答"]}}' wx:key="id">
+        <view class='tabs-item {{currentTabsIndex==index?"selected":""}}' bindtap='onTabsItemTap' data-index='{{index}}'>
+          {{item}}
+        </view>
+      </block>
+  </view>
+
+  <!-- 内容 -->
+  <view class='content' wx:if='{{netWork}}' >
+    <!-- 文章 -->
+    <view wx:if='{{currentTabsIndex==0}}'>
+      <view class='home-cell' wx:for="{{artData}}" data-index="{{item.id}}" wx:key="{{item.id}}" catchtap='toMyArticleDetail'wx:if='{{!noArtCollect}}'>
+        <view class='home-cell-left' data-index="{{index}}">
+          <view class="{{['home-cell-title',item.isRead?'isRead':'']}}" data-index="{{index}}">
+            {{item.title}}
+          </view>
+          <view class='home-cell-tag' data-index="{{index}}">
+            <view class='home-cell-author' data-index="{{index}}">{{item.author}}</view>
+            <view class='home-cell-num' data-index="{{index}}">
+              {{item.views}} 阅读 | {{item.comment_nums}} 评论
+            </view>
+          </view>
+        </view>
+        <image src='{{item.pic}}' mode='aspectFill' wx:if="{{item.pic&&item.pic.length>0}}" data-index="{{index}}">
+        </image>
+      </view>
+         <view wx:if='{{noArtCollect}}' class='allNoCollect'>
+    <template is='noCollect' data='{{src:"../../utils/res/imgs/ic_no_favorite.png",tip:"您还没有收藏哦~"}}'> 
+    </template>
+    </view>
+    </view>
+    <!-- 问答 -->
+    <view wx:if='{{currentTabsIndex==1}}'>
+      <view class='answer-cell' wx:for="{{answerData}}" wx:key="{{item.interlocut_id}}" catchtap='toMyAnswerDetail' data-index='{{item.interlocut_id}}' wx:if='{{!noAnswerCollect}}'>
+        <view class='answer-cell-author'>
+          <image src="{{item.anonymous==2?'../../utils/res/imgs/ic_avatar_anonymous.png':(item.avatar?item.avatar:'../../utils/res/imgs/ic_avatar_default.png')}}" mode='aspectFill'></image>
+          <text>{{item.nickname}}</text>
+        </view>
+        <view class='answer-cell-title'>
+          {{item.title}}
+        </view>
+        <view class='answer-cell-content'>
+          {{item.content}}
+        </view>
+        <view class='answer-cell-read'>
+          <text>{{item.views}}阅读</text>
+          <text>{{item.answer_nums}}回答</text>
+        </view>
+      </view>
+        <view wx:if='{{noAnswerCollect}}' class='allNoCollect'>
+    <template is='noCollect' data='{{src:"../../utils/res/imgs/ic_no_favorite.png",tip:"您还没有收藏哦~"}}'> 
+    </template>
+    </view> 
+    </view>
+  </view>
+</view>
+
+ <view class='netError' catchtap='reloadNet' wx:if="{{artData.length<=0&&!netWork }}">
+  <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+</view> 

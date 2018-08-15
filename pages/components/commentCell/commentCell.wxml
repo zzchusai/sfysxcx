@@ -1,0 +1,29 @@
+<view class='comment-cell' catchtap='selectCell'>
+  <!-- 头像  -->
+  
+  <image class='comment-cell-avatar' mode='aspectFill' src = "{{item.anonymous==2?'../../utils/res/imgs/ic_avatar_anonymous.png':(item.avatar?item.avatar:'../../../utils/res/imgs/ic_avatar_default.png')}}">
+    <image mode='aspectFill' wx:if="{{item.user_type == 2}}" src='../../../utils/res/imgs/ic_range_logo.png' class='greatBS'></image>
+  </image>
+  <view>
+    <view class='comment-cell-user'>
+      <view class='comment-cell-user-name'>
+        <text>{{item.nickname}}</text>
+        <image mode='aspectFill' wx:if="{{item.user_type == 2}}" src='../../../utils/res/imgs/ic_master_comment.png' class='greatTX'></image>
+      </view>
+      <view class='comment-cell-user-like' catchtap="{{item.like==0?'setCommentLike':'setSecCommentLike'}}">
+      <image mode='aspectFill' src="{{item.like==0?'../../../utils/res/imgs/comment_like_off.png':'../../../utils/res/imgs/ic_like_on.png'}}"></image>
+        <text>{{item.likes}}</text>
+      </view>
+    </view>
+    <view class='comment-cell-content'>
+      <text wx:if='{{item.pname&&showReply==1}}'>回复 <text class='replyname'>{{item.pname}}</text> ：</text>{{item.content}}
+    </view>
+    <view class="{{['comment-cell-time',isLast?'isLast':'']}}">
+      <view>
+        <text>{{item.time}}</text>
+        <text class='comment-cell-reply'  wx:if='{{showReply==1}}'><text wx:if="{{item.comments>0}}">{{item.comments}}</text>回复</text>
+      </view>
+      <view wx:if="{{item.canDel == 1}}" catchtap='delComment'>删除</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+
+<template name='netError'>
+  <image src="{{src}}"></image>
+  <text>网络加载失败，请稍后重试</text>
+</template>

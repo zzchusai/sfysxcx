@@ -1,0 +1,66 @@
+@import '../template/noCollect/noCollect.wxss';
+page{
+  background-color: #FAF9F9;
+}
+.myQuestion-cell{
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 30rpx;
+  border-bottom: 20rpx #FAF9F9 solid;
+  width: 100%;
+  background: #fff;
+}
+.myQuestion-header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 41rpx 0rpx 31rpx 0rpx;
+}
+.myQuestion-header image{
+  width: 60rpx;
+  height: 60rpx;
+  flex: 0 0 60rpx;
+  border-radius: 30rpx;
+  margin-right: 30rpx;
+}
+.myQuestion-header text{
+  flex: 1;
+  width: 1rpx;
+  color: #333333;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.myQuestion-title{
+  color: #333333;
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 29rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+
+.myQuestion-content{
+  color: #666666;
+  font-size: 32rpx;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+.myQuestion-footer{
+  height: 92rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #ccc;
+}
+.allNoCollect{
+  width: 100%;
+  height: 1000rpx;
+}
+@import "../template/netError/netError.wxss";

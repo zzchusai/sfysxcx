@@ -1,0 +1,110 @@
+page{
+  background-color: #FAF9F9;
+}
+.profile_root{
+  position: relative;
+}
+.profile_getNumber{
+   position: absolute;
+   height: 284rpx;
+   left: 0rpx;
+   right: 0rpx;
+   top: 0rpx;
+   z-index: 200;
+}
+
+.profile_header{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 284rpx;
+  font-size: 32rpx;
+  color: #333;
+  background-color: white;
+  margin-bottom: 27rpx;
+}
+.profile_header>view{
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 30rpx;
+  align-items: center;
+}
+.profile_header>view view{
+  border: 2rpx #333 solid;
+  padding: 0rpx 30rpx;
+  border-radius: 10rpx;
+  height:71rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile_header::after,.profile_cell::after{
+  border: none;
+}
+
+.profile_header image{
+  width: 129rpx;
+  height: 129rpx;
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+  border-radius: 64.5rpx;
+}
+
+.profile_cell{
+  height: 142rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 40rpx;
+  background-color: white;
+  color: #333333;
+  font-size: 32rpx;
+}
+.profile_cell image{
+  height: 82rpx;
+  width: 82rpx;
+  margin-right: 20rpx;
+}
+.profile_line{
+  width: 100%;
+  height: 1rpx;
+  background-color: #DAD9D9;
+}
+.profile_root_unLogin{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile_root_unLogin image{
+  height: 380rpx;
+  width: 380rpx;
+  margin-bottom: 50rpx;
+}
+.profile_root_unLogin button{
+  font-size: 30rpx;
+  width: 80%;
+  height: 90rpx;
+  line-height: 90rpx
+}
+.login_wechat{
+  background-color: #0099E5;
+  color: white;
+  border-radius: 90rpx;
+  border: none;
+  margin-bottom: 30rpx;
+}
+.login_wechat::after{
+  border-radius: 90rpx; 
+  border: none;
+}
+.login_phone{
+  color: #333333;
+  border-color: #333333;
+  border-radius: 90rpx; 
+}
+.login_phone::after{
+  border-color: #333333;
+  border-radius: 90rpx; 
+}

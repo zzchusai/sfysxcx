@@ -1,0 +1,29 @@
+<import src='../template/noCollect/noCollect.wxml' />
+<view class='myQuestion-root' wx:if='{{isCollect&&netWork}}'>
+
+  <view wx:for="{{mutableData}}" class='myQuestion-cell' wx:key="{{item.interlocut_id}}" catchtap='toMyQuestionDetail' data-index='{{item.interlocut_id}}'>
+    <view class='myQuestion-header'>
+       <image wx:if='{{item.anonymous==2}}' src="../../utils/res/imgs/ic_avatar_anonymous.png" mode='aspectFill'>
+       </image>
+       <image wx:if="{{item.anonymous==1&&item.avatar==''}}" src="../../utils/res/imgs/ic_avatar_default.png" mode='aspectFill'>
+      </image>
+       <image wx:if="{{item.anonymous==1&&item.avatar!=''}}" src="{{item.avatar}}" mode='aspectFill'>
+        </image>
+      <text>{{item.nickname}}</text>
+    </view>
+    <text class='myQuestion-title'>{{item.title}}</text>
+    <view class='myQuestion-content'>{{item.content}}</view>
+    <view class='myQuestion-footer'>
+      <text>{{item.views}}阅读</text>
+      <text>{{item.answer_nums}}回答</text>
+    </view>
+  </view>
+</view>
+  <view wx:if='{{!isCollect && netWork}}' class='allNoCollect'>
+    <template is='noCollect' data='{{src:"../../utils/res/imgs/ic_no_question.png",tip:"您还没有发布过问题哦~"}}'> 
+    </template>
+    </view> 
+<import src='../template/netError/netError.wxml'/>
+ <view class='netError' catchtap='reloadNet' wx:if="{{mutableData.length<=0 && !netWork}}">
+    <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+  </view>

@@ -1,0 +1,52 @@
+  <import src='../template/netError/netError.wxml'/>
+ <view class='writeAnswer-root'>
+  <!-- 标题 -->
+  <input placeholder="标题至多输入20个字" maxlength="20" placeholder-style="placeholder" class='writeAnswer-title' bindinput="inputTitle" bindconfirm="inputTitle" value='{{title}}'></input>
+  <!-- 详情 -->
+  <textarea placeholder="请详细描述您的问题" class='writeAnswer-issue' bindinput="inputIssue" bindconfirm="inputIssue" maxlength="1000"></textarea>
+  <!-- 展示选择的图片 -->
+  <view class='writeAnswer-showImgs'>
+    <view wx:if="{{imgs.length>0}}" class="writeAnswer-imgs">
+      <view class='writeAnswer-img' wx:for="{{imgs}}">
+        <image  src="{{item}}" mode="aspectFill" data-detail="{{item}}" catchtap='previewImg'> </image>
+        <image src= "../../utils/res/imgs/dele_img.png" class='del-img' data-index='{{index}}'  mode="aspectFill" catchtap='delImg'></image>
+      </view>
+       
+       <view class='writeAnswer-addImg' catchtap='selectImgs'  wx:if="{{imgs.length<9}}">
+          <image src='../../utils/res/imgs/ic_feedback_add.png'  mode="aspectFill"></image>
+       </view>
+    </view>
+    <!-- 没有图片时 -->
+    <view wx:if="{{imgs.length<=0}}" class="writeAnswer-noImg" catchtap='selectImgs'>
+      <image src='../../utils/res/imgs/ic_feedback_hint.png' mode="aspectFill" ></image>
+      <text>（您最多可上传9张图片）</text>
+    </view>
+  </view>
+  <view class='writeAnswer-selectClassify'>
+    <text>选择分类</text>
+    <view>
+      <picker bindchange="bindPickerChange"  range-key="name" value="{{selectClassifyIndex}}" range="{{classify}}">
+        <view class="picker">
+          {{classify[selectClassifyIndex].name}}
+        </view>
+      </picker>
+      <image src='../../utils/res/imgs/ic_arrow_right.png'></image>
+    </view>
+    
+  </view>
+  <view class='writeAnswer-selectClassify'>
+    <text>匿名发布</text>
+    <!-- <switch checked="{{haveName}}" bindchange="changeName"></switch> -->
+    <image class='switch' src="{{haveName?'../../utils/res/imgs/ic_switch_off.png':'../../utils/res/imgs/ic_switch_on.png'}}" catchtap="changeName"></image>
+  </view>
+  <view class='writeAnswer-submit'>
+    <text class="{{[title.length>0&&content.length>0?'allowText':'']}}" fixed="true" catchtap="submit">发布</text>
+  </view>
+  </view>
+<view class='netError' catchtap='reloadNet' wx:if="{{ !netWork}}">
+    <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+</view> 
+
+
+
+

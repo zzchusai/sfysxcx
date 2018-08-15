@@ -1,0 +1,7 @@
+/* pages/components/parseText/parseText.wxss */
+.wxParse-p{
+  font-size: 32rpx;
+}
+.wxParse-img{
+  width: 100%;
+}

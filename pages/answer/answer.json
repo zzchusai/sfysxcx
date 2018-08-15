@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "answerBanner": "../components/answerBanner/answerBanner"
+  }
+
+}

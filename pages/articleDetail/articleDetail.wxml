@@ -1,0 +1,54 @@
+<import src='../template/noComments/noComments.wxml' />
+<import src='../template/netError/netError.wxml'/>
+<import src='../template/noData/noData.wxml' />
+<!--web  -->
+<view class='web' wx:if='{{!isDel}}'>
+  <!-- 文章标题 -->
+  <view class='article-title'>
+    {{title}}
+  </view>
+  <!-- 作者&时间  -->
+  <view class='article-author'>
+    <text>{{author}}</text>
+    <text>{{time}}</text>
+  </view>
+   <!-- 正文   -->
+   <parseText id="parseText" content="{{content}}" imgsJson="{{imgsJson}}"></parseText> 
+
+  <!-- 阅读&点赞  -->
+  <view class='article-read'>
+    <view>
+      <image src='../../utils/res/imgs/ic_eye.png' mode='aspectFit'></image>
+      <text>{{readCount}}</text>
+    </view>
+    <view class='likes'>
+      <image src='../../utils/res/imgs/ic_like.png' mode='aspectFill'></image>
+      <text>{{praise}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- 全部评论 -->
+<view class='allComments' wx:if='{{!isDel}}'>
+  <view class='allCommentsTitle'>全部评论 （
+    <text>{{commentsNum}}</text> ）</view>
+  <view class='commemt-Cell' wx:for='{{commentsData}}' wx:key='{{item.user_id}}' data-index='{{index}}' wx:if='{{isComments}}'>
+    <commentCell id='commentCell' item='{{item}}' style='width:100%' isLast="{{index==commentsData.length-1}}" bind:selectCell="_selectAllCell" types='4'  bind:setCommentLike='_setCommentLike' showReply='1' bind:delComment='_delComment' ></commentCell>
+  </view>
+
+  <!-- 没有评论 -->
+   <view class='comments' wx:if='{{!isComments}}'>
+  <view class='allNoComments' >
+    <template is='noComments' data='{{tip:"还没有评论哦，快来抢沙发吧~",src:"../../utils/res/imgs/ic_no_comment.png"}}'></template>
+  </view>
+</view>
+</view>
+<inputArea id="inputArea" bind:comments="_comments" commentsNums="{{commentsNum}}" types='2'  multi_id='{{id}}' collect='{{collectStatus}}' islike='{{isLike}}' bind:setLike='_setLike'
+bind:setCollect='_setCollect' bind:cancelCollect='_cancelCollect' wx:if='{{!isDel}}'></inputArea>
+<view class='netError' catchtap='reloadNet' wx:if="{{commentsData.length<=0 && !netWork}}">
+    <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+</view>
+
+<view class='allNodata' wx:if='{{isDel}}'>
+<template is='noData' data="{{src:'../../utils/res/imgs/ic_no_article.png',tip:errorTip}}"></template>
+</view>

@@ -1,0 +1,7 @@
+{
+    "usingComponents":{
+      "homeBnner":"../components/homeBanner/homeBanner"
+    }
+
+
+}

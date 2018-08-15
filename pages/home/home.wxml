@@ -1,0 +1,33 @@
+<import src='../template/netError/netError.wxml'/>
+
+<view  class='home-root' wx:if='{{netWork}}'>
+  <!-- 展示banner -->
+  <view>
+    <homeBnner id="customA" mutableData="{{bannerData}}" ></homeBnner>
+    
+  </view>
+
+  <view class='home-table-header'>
+    <view>精选文章</view>
+    <image class='search' src='../../utils/res/imgs/searchlogo.png' catchtap='goSearch' mode='aspectFill'></image>
+  </view>
+  <view class='home-cell' wx:for="{{mutableData}}" data-index="{{index}}" wx:key="{{item.id}}" catchtap='selectCell' wx:if='{{netWork}}'>
+    <view class='home-cell-left' data-index="{{index}}">
+      <view class="{{['home-cell-title',item.isRead?'isRead':'']}}" data-index="{{index}}">
+        {{item.title}}
+      </view>
+      <view class='home-cell-tag' data-index="{{index}}">
+        <view class='home-cell-author' data-index="{{index}}">{{item.author}}</view>
+        <view class='home-cell-num' data-index="{{index}}">
+          {{item.views}} 阅读 | {{item.comment_nums}} 评论
+        </view>
+      </view>
+    </view>
+    <image src='{{item.pic}}' mode='aspectFill' wx:if="{{item.pic&&item.pic.length>0}}" data-index="{{index}}">
+    </image>
+  </view>
+</view>
+
+  <view class='netError' catchtap='reloadNet' wx:if="{{!netWork}}" >
+    <template is="netError" data="{{src:'../../utils/res/imgs/ic_network_error.png'}}"></template>
+  </view>

@@ -1,0 +1,16 @@
+/**app.wxss**/
+view,text,image,scroll-view,page,swiper,textarea,input,picker,button{
+  padding: 0rpx;
+  margin:  0rpx;
+  box-sizing: border-box;
+  -webkit-font-smoothing:antialiased;
+  -webkit-overflow-scrolling:touch;
+}
+page{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+}
+@import "wxParse/wxParse.wxss";

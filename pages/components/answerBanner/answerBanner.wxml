@@ -1,0 +1,3 @@
+<scroll-view scroll-x class='answer-banner-scroll'>
+ <view wx:for="{{mutableData}}" wx:key="{{item.id}}" class="{{[selectIndex==index?'select':'']}}" data-index='{{index}}' catchtap='selectCell'>{{item.name}}</view>
+</scroll-view>

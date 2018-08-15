@@ -1,0 +1,84 @@
+.comment-cell{
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  margin-top: 30rpx;
+}
+.comment-cell>view{
+  flex: 1;
+}
+.comment-cell-avatar{
+  width: 86rpx;
+  height: 86rpx;
+  flex: 0 0 86rpx;
+  border-radius: 43rpx;
+  position: relative;
+  margin-right: 23rpx;
+}
+.greatBS{
+  position: absolute;
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 14rpx;
+  right: 10rpx;
+  bottom:6rpx; 
+}
+
+.comment-cell-user{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #999999;
+  font-size: 24rpx;
+  align-items: flex-start;
+  margin-bottom: 25rpx;
+}
+.comment-cell-user-name image{
+  width: 83rpx;
+  height: 21rpx;
+  flex: 0 0 83rpx;
+}
+.comment-cell-user-like{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  height: 50rpx;
+}
+.comment-cell-user-like image{
+  width: 34rpx;
+  height: 34rpx;
+  flex: 0 0 34rpx;
+  margin-right: 9rpx;
+  margin-left: 20rpx;
+}
+.comment-cell-content{
+  color: #4C4949;
+  font-weight: bold;
+  font-size: 30rpx;
+  margin-bottom: 29rpx;
+}
+.comment-cell-time{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 24rpx;
+  color: #333333;
+  padding-bottom: 30rpx;
+  border-bottom: 1rpx solid #F1F1F1;
+}
+.isLast{
+  border: none;
+}
+.comment-cell-reply{
+  margin-left: 30rpx;
+  height: 46rpx;
+  padding: 0rpx 25rpx;
+  background-color: #F1F1F1;
+  border-radius: 23rpx;
+}
+.replyname{
+   color: rgba(171, 149, 109, 0.8);
+}
+.greatTX{
+  margin-left: 15rpx;
+}

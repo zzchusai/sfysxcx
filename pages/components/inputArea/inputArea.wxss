@@ -1,0 +1,100 @@
+
+.comment-input-noFocus{
+  position: fixed;
+  bottom: 0px;
+  height: 88rpx;
+  width: 100%;
+  right: 0px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  border-top:1rpx solid #ccc;
+  align-items: center;
+  z-index: 1000;
+}
+ .comment-input-noFocus .input-text{
+   flex: 1;
+ }
+ .comment-input-noFocus input{
+  display: block;
+  margin-right: 30rpx;
+  height: 62rpx; 
+  border-radius: 10rpx;
+  margin-left: 30rpx;
+  background-color: #f6f6f6;
+  font-size: 28rpx;
+  color: #ccc;
+  text-align: left;
+  vertical-align: middle;
+} 
+
+.placeholder{
+  font-size: 30rpx;
+}
+
+.isIos{
+  padding: 15rpx;
+}
+
+.comment-input-focus{
+  position: fixed;
+  top: 0px;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+
+.includeContent{
+  color: #c19c75;
+}
+.comment-input-focus .input-text {
+  background-color: #f4f5f6;
+  width: 100%;
+  height: 88rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: #333;
+}
+ .comment-input-focus input{
+  background-color: white;
+  flex: 1;
+  margin: 0rpx 30rpx;
+  color: #333;
+  border-radius: 14rpx;
+  height: 62rpx; 
+}
+.comments-setting{
+  width: 250rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.comments-setting image{
+  display: flex;
+ align-self: center; 
+ width: 50rpx;
+ height: 50rpx;
+}
+.comments-nums{
+  position: relative;
+  z-index: 1000;
+}
+.setting-commentsNums{
+  position: absolute;
+  z-index: 1000; 
+  font-size: 20rpx;
+  right: 0px;
+  top: 0;
+  width: 30rpx; 
+  color: #fff;
+  text-align: center; 
+  border-radius: 8rpx;
+  background-color: #C19C75;
+}

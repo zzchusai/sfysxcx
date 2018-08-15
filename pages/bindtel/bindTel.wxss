@@ -1,0 +1,67 @@
+.bindTel{
+  display: flex;
+  flex-direction: column;
+  padding: 0rpx 30rpx;
+}
+
+.bindTel image{
+  align-self: center;
+  height: 380rpx;
+  width: 380rpx;
+}
+.placeholder{
+  font-size: 30rpx;
+  color: #CCCCCC;
+}
+
+.line{
+  border-bottom: 1rpx #DAD9D9 solid;
+}
+input{
+  height: 99rpx;
+  font-size: 30rpx;
+  color: #323333;
+}
+.input-tel{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bindTel-code{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.bindTel-code text{
+  font-size: 30rpx;
+  color: #BD9973;
+  border: 2rpx #BD9973 solid;
+  white-space:nowrap;
+  display: inline-block;
+  padding: 10rpx 30rpx;
+  border-radius: 10rpx;
+}
+.bindTel-submit{
+  width: 100%;
+  height: 88rpx;
+  font-size: 30rpx;
+  background-color: #BD9973;
+  color: #FFFFFF;
+  line-height: 88rpx;
+  text-align: center;
+  margin-top: 80rpx;
+}
+
+.bindTel-error{
+  background-color: #F6F6F6;
+  color: #CCCCCC; 
+}
+.bindTel-code .cantCode{
+  color: #ccc;
+  border: 2rpx #CCCCCC solid;
+}
+.bindTel-code icon{
+  margin-right: 30rpx;
+}

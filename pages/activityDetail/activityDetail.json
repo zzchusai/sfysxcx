@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "parseText": "../components/parseText/parseText",
+    "commentCell": "../components/commentCell/commentCell",
+    "inputArea": "../components/inputArea/inputArea"
+  }
+}

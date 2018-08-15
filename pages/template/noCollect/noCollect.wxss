@@ -1,0 +1,24 @@
+/* pages/template/noCollect/noCollect.wxss */
+.allNoCollect{
+  position: absolute;
+  top: 0rpx;
+  left: 0rpx;
+  bottom: 0rpx;
+  right: 0rpx;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  z-index: 200;
+}
+
+.allNoCollect image{
+  width: 250rpx;
+  height: 250rpx;
+  margin-bottom: 30rpx;
+}
+
+.allNoCollect text{
+  color: #999999;
+  font-size: 35rpx;
+}
